@@ -1,4 +1,4 @@
-# Create a Game Map Using Leaflet, PostgreSQL/PostGIS and Redis on Alibaba Cloud
+# Creating a Web Game Map App Using Leaflet, PostgreSQL/PostGIS and Redis on Alibaba Cloud
 
 You can access the tutorial artifact including deployment script (Terraform), related source code, sample data and instruction guidance from the github project:
 [https://github.com/alibabacloud-howto/solution-interactive-game-map-postgis-redis](https://github.com/alibabacloud-howto/solution-interactive-game-map-postgis-redis)
