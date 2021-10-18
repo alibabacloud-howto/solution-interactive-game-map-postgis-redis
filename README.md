@@ -28,11 +28,11 @@ Deployment architecture:
 
 Run the [terraform script](https://github.com/alibabacloud-howto/solution-interactive-game-map-postgis-redis/blob/main/deployment/terraform/main.tf). Please specify the necessary information and region to deploy.
 
-![image.png](https://github.com/alibabacloud-howto/opensource_with_apsaradb/raw/main/apache-airflow/images/tf-parms.png)
+![image.png](![image.png](https://github.com/alibabacloud-howto/solution-interactive-game-map-postgis-redis/raw/main/images/tf-parms.png))
 
 After the Terraform script execution finished, the ECS instance information are listed as below.
 
-![image.png](https://github.com/alibabacloud-howto/solution-mongodb-labs/raw/main/nextjs-mongodb-app/images/tf-done.png)
+![image.png](https://github.com/alibabacloud-howto/solution-interactive-game-map-postgis-redis/raw/main/images/tf-done.png)
 
 - ``eip_ecs``: The public EIP of the ECS for gamp map application host
 - ``rds_pg_url``: The connection endpoint URL of the RDS PostgreSQL database
@@ -55,6 +55,7 @@ Copy this ECS instance's Internet IP address and remotely log on to this ECS (Ub
 > The default account name and password of the ECS instance:
 > 
 > Account name: root
+>
 > Password: Aliyun-test
 
 After logging in successfully, enter the following command to download the pre-prepared data script.
