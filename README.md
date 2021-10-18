@@ -13,7 +13,7 @@ This is demo of building an interactive "Game of Thrones" ([https://github.com/a
 
 Deployment architecture:
 
-![image.png](https://github.com/alibabacloud-howto/solution-mongodb-labs/raw/main/nextjs-mongodb-app/images/archi.png)
+![image.png](https://github.com/alibabacloud-howto/solution-interactive-game-map-postgis-redis/raw/main/images/archi.png)
 
 ---
 ### Index
