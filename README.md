@@ -288,6 +288,6 @@ YOUR-ECS-PUBLIC-IP:8080
 Game map service deployment is completed.
 
 ---
-Author of this tutorials on Alibaba Cloud:
+Author of this tutorial on Alibaba Cloud:
 - [@andi1991](https://github.com/andi1991)
 - [@javainthinking](https://github.com/javainthinking)
