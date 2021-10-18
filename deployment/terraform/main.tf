@@ -1,6 +1,6 @@
 provider "alicloud" {
-  access_key = "${access-key}"
-  secret_key = "${secret-key}"
+#   access_key = "${var.access_key}"
+#   secret_key = "${var.secret_key}"
   region = "cn-hongkong"
 }
 
