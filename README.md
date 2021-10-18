@@ -18,10 +18,10 @@ Deployment architecture:
 ---
 ### Index
 
-- [Step 1. Use Terraform to provision ECS, PostgreSQL database and Redis on Alibaba Cloud]()
-- [Step 2. Setup sample data in RDS PostgreSQL database]()
-- [Step 3. Install NodeJS]()
-- [Step 4. Deploy and run the demo game map project]()
+- [Step 1. Use Terraform to provision ECS, PostgreSQL database and Redis on Alibaba Cloud](https://github.com/alibabacloud-howto/solution-interactive-game-map-postgis-redis#step-1-use-terraform-to-provision-ecs-postgresql-database-and-redis-on-alibaba-cloud)
+- [Step 2. Setup sample data in RDS PostgreSQL database](https://github.com/alibabacloud-howto/solution-interactive-game-map-postgis-redis#2-setup-sample-data-in-rds-postgresql-database)
+- [Step 3. Install NodeJS](https://github.com/alibabacloud-howto/solution-interactive-game-map-postgis-redis#3-install-nodejs)
+- [Step 4. Deploy and run the demo game map project](https://github.com/alibabacloud-howto/solution-interactive-game-map-postgis-redis#4-deploy-and-run-the-demo-game-map-project)
 
 ---
 ### Step 1. Use Terraform to provision ECS, PostgreSQL database and Redis on Alibaba Cloud
@@ -286,3 +286,8 @@ YOUR-ECS-PUBLIC-IP:8080
 ![image desc](https://labex.io/upload/Q/U/H/lQmb9C32O2cn.jpg)
 
 Game map service deployment is completed.
+
+---
+Author of this tutorials on Alibaba Cloud:
+- [@andi1991](https://github.com/andi1991)
+- [@javainthinking](https://github.com/javainthinking)
