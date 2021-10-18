@@ -28,7 +28,7 @@ Deployment architecture:
 
 Run the [terraform script](https://github.com/alibabacloud-howto/solution-interactive-game-map-postgis-redis/blob/main/deployment/terraform/main.tf). Please specify the necessary information and region to deploy.
 
-![image.png](![image.png](https://github.com/alibabacloud-howto/solution-interactive-game-map-postgis-redis/raw/main/images/tf-parms.png))
+![image.png](https://github.com/alibabacloud-howto/solution-interactive-game-map-postgis-redis/raw/main/images/tf-parms.png)
 
 After the Terraform script execution finished, the ECS instance information are listed as below.
 
