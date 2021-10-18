@@ -1,110 +1,48 @@
-# Game of Thrones
+# Create a Game Map Using Leaflet, PostgreSQL/PostGIS and Redis on Alibaba Cloud
 
-## Overview
+You can access the tutorial artifact including deployment script (Terraform), related source code, sample data and instruction guidance from the github project:
+[https://github.com/alibabacloud-howto/solution-interactive-game-map-postgis-redis](https://github.com/alibabacloud-howto/solution-interactive-game-map-postgis-redis)
 
-### A Game of Maps
+More tutorial around Alibaba Cloud Database, please refer to:
+[https://github.com/alibabacloud-howto/database](https://github.com/alibabacloud-howto/database)
 
-An interactive "Game of Thrones" map powered by Leaflet, PostGIS, and Redis.
+---
+### Overview
 
-## Index
+This is demo of building an interactive "Game of Thrones" ([https://github.com/andi1991/Atlas-Of-Thrones](https://github.com/andi1991/Atlas-Of-Thrones)) map powered by Leaflet, PostgreSQL/PostGIS and Redis on Alibaba Cloud.
 
-- Step 1: Use Terraform to create resources
-- Step 2: RDS Postgresql database
-- Step 3: Install Nodejs
-- Step 4: install the sample project
+Deployment architecture:
 
-## 1. Use Terraform to create resources
+![image.png](https://github.com/alibabacloud-howto/solution-mongodb-labs/raw/main/nextjs-mongodb-app/images/archi.png)
 
-### 1.1 Install Terraform
+---
+### Index
 
-Run the following command to update the apt installation source. (This experiment uses the Ubuntu 20.04 system)
+- [Step 1. Use Terraform to provision ECS, PostgreSQL database and Redis on Alibaba Cloud]()
+- [Step 2. Setup sample data in RDS PostgreSQL database]()
+- [Step 3. Install NodeJS]()
+- [Step 4. Deploy and run the demo game map project]()
 
-```
-apt update
-```
+---
+### Step 1. Use Terraform to provision ECS, PostgreSQL database and Redis on Alibaba Cloud
 
-![image desc](https://labex.io/upload/Y/D/L/rztUc4BBLFXM.png)
+Run the [terraform script](https://github.com/alibabacloud-howto/solution-interactive-game-map-postgis-redis/blob/main/deployment/terraform/main.tf). Please specify the necessary information and region to deploy.
 
-Run the following command to install the unpacking tool:
+![image.png](https://github.com/alibabacloud-howto/opensource_with_apsaradb/raw/main/apache-airflow/images/tf-parms.png)
 
-```
-apt install -y unzip zip
-```
+After the Terraform script execution finished, the ECS instance information are listed as below.
 
-![image desc](https://labex.io/upload/S/F/D/3MrxW06YQ113.png)
+![image.png](https://github.com/alibabacloud-howto/solution-mongodb-labs/raw/main/nextjs-mongodb-app/images/tf-done.png)
 
-Run the following command to download the Terraform installation package:
+- ``eip_ecs``: The public EIP of the ECS for gamp map application host
+- ``rds_pg_url``: The connection endpoint URL of the RDS PostgreSQL database
+- ``rds_pg_port``: The connection endpoint port of the RDS PostgreSQL database
+- ``redis_url``: The connection endpoint URL of the Redis
 
-```
-wget http://labex-ali-data.oss-us-west-1.aliyuncs.com/terraform/terraform_0.14.6_linux_amd64.zip
-```
+---
+### 2. Setup sample data in RDS PostgreSQL database
 
-![image desc](https://labex.io/upload/O/E/T/h9fs71HhZYat.png)
-
-Run the following command to unpack the Terraform installation package to /usr/local/bin:
-
-```
-unzip terraform_0.14.6_linux_amd64.zip -d /usr/local/bin/
-```
-
-![image desc](https://labex.io/upload/O/H/H/iGN8qs6pi0tm.png)
-
-### 1.2 Create Resources
-
-Refer back to the user's home directory as shown below, click AccessKey Management.
-
-![image desc](https://labex.io/upload/G/I/B/BUGx6Dcu78BY.jpg)
-
-Click on Create AccessKey. After AccessKey has been created successfully, AccessKeyID and AccessKeySecret are displayed. AccessKeySecret is only displayed once. Click Download CSV FIle to save the AccessKeySecret.
-
-![image desc](https://labex.io/upload/H/F/B/8Y6UiUGsRpR3.jpg)
-
-Back to the command line, enter the following command to create the "terraform" directory.
-
-```
-mkdir -p terraform && cd terraform
-```
-
-![image desc](https://labex.io/upload/P/O/G/INb3OihYE6QP.jpg)
-
-Enter the command ``vim main.tf``, copy the following content to the file, please pay attention to replace with the user's own **access-key, secret-key**.
-
-```
-
-```
-
-![image desc](https://labex.io/upload/X/A/M/EFG5HN0bppkF.jpg)
-
-Enter the following command to initialize the project.
-
-```
-terraform init
-```
-
-![image desc](https://labex.io/upload/V/N/X/D3zun1aZFGTE.jpg)
-
-
-Enter the following command to view the execution plan.
-
-```
-terraform plan
-```
-
-![image desc](https://labex.io/upload/D/L/Q/GWfNMfOYiaji.jpg)
-
-Enter the following command to start creating resources, enter "yes".
-
-```
-terraform apply
-```
-
-![image desc](https://labex.io/upload/C/M/B/kgY36KGahSyv.jpg)
-
-![image desc](https://labex.io/upload/E/X/R/v8kVcbBeVN6E.jpg)
-
-## 2. RDS Postgresql database
-
-Click  Elastic Compute Service, as shown in the following figure.
+Click ``Elastic Compute Service``, as shown in the following figure.
 
 ![image desc](https://labex.io/upload/Q/C/E/vWl7sSgr7lBx.jpg)
 
@@ -117,8 +55,7 @@ Copy this ECS instance's Internet IP address and remotely log on to this ECS (Ub
 > The default account name and password of the ECS instance:
 > 
 > Account name: root
-> 
-> Password: nkYHG890..
+> Password: Aliyun-test
 
 After logging in successfully, enter the following command to download the pre-prepared data script.
 
@@ -220,8 +157,8 @@ Enter the following command to exit the client.
 
 ![image desc](https://labex.io/upload/M/E/M/CuXnrVk0KdBG.jpg)
 
-
-## 3. Install Nodejs
+---
+### 3. Install NodeJS
 
 Enter the following command to download the Nodejs installation package.
 
@@ -274,7 +211,8 @@ npm -v
 
 ![image desc](https://labex.io/upload/D/J/P/r7fxWNVpP9cw.jpg)
 
-## 4. Install the sample project
+---
+### 4. Deploy and run the demo game map project
 
 Enter the following command to install the git tool.
 
@@ -342,10 +280,8 @@ Access the service in the browser, enter the link below, ***please pay attention
 
 ```
 YOUR-ECS-PUBLIC-IP:8080
-
-47.243.23.173:8080
 ```
 
 ![image desc](https://labex.io/upload/Q/U/H/lQmb9C32O2cn.jpg)
 
-Service deployment completed
+Game map service deployment is completed.

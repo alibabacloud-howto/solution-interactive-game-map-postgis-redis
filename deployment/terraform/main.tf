@@ -52,11 +52,11 @@ resource "alicloud_instance" "instance" {
   security_groups = alicloud_security_group.group.*.id
   instance_type           = "ecs.c6e.large" #   cn-hongkong-b
   system_disk_category    = "cloud_essd"
-  system_disk_name        = "rdspg_tpch_system_disk"
+  system_disk_name        = "game_map_system_disk"
   system_disk_size        = 40
-  system_disk_description = "rdspg_tpch_system_disk"
+  system_disk_description = "game_map_system_disk"
   image_id                = "ubuntu_20_04_x64_20G_alibase_20210824.vhd"
-  instance_name           = "rdspg_tpch"
+  instance_name           = "game_map"
   password                = "Aliyun-test" ## Please change accordingly
   instance_charge_type    = "PostPaid"
   vswitch_id              = alicloud_vswitch.default.id
@@ -133,6 +133,10 @@ output "eip_ecs" {
 
 output "rds_pg_url" {
   value = alicloud_db_instance.instance.connection_string
+}
+
+output "rds_pg_port" {
+  value = alicloud_db_instance.instance.port
 }
 
 output "redis_url" {
